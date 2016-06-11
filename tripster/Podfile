@@ -1,0 +1,5 @@
+use_frameworks!
+
+target 'tripster' do
+    pod 'CVCalendar', '~> 1.2.9'
+end

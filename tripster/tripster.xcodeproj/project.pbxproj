@@ -10,6 +10,7 @@
 		3E2542AA1D0BFF4400E33876 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2542A91D0BFF4400E33876 /* RatingControl.swift */; };
 		3E2542AE1D0C027D00E33876 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2542AD1D0C027D00E33876 /* Meal.swift */; };
 		3E2542B01D0C116E00E33876 /* MealTableViewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2542AF1D0C116E00E33876 /* MealTableViewTableViewController.swift */; };
+		3E2542B61D0C346B00E33876 /* SelectDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2542B51D0C346B00E33876 /* SelectDateViewController.swift */; };
 		3EEDC2381D0BDF5A00C3D2A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEDC2371D0BDF5A00C3D2A5 /* AppDelegate.swift */; };
 		3EEDC23A1D0BDF5A00C3D2A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEDC2391D0BDF5A00C3D2A5 /* ViewController.swift */; };
 		3EEDC23D1D0BDF5A00C3D2A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EEDC23B1D0BDF5A00C3D2A5 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 		3E2542A91D0BFF4400E33876 /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		3E2542AD1D0C027D00E33876 /* Meal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Meal.swift; path = ../Meal.swift; sourceTree = "<group>"; };
 		3E2542AF1D0C116E00E33876 /* MealTableViewTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealTableViewTableViewController.swift; sourceTree = "<group>"; };
+		3E2542B51D0C346B00E33876 /* SelectDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectDateViewController.swift; sourceTree = "<group>"; };
 		3EEDC2341D0BDF5A00C3D2A5 /* tripster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tripster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EEDC2371D0BDF5A00C3D2A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3EEDC2391D0BDF5A00C3D2A5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				3EEDC23E1D0BDF5A00C3D2A5 /* Assets.xcassets */,
 				3EEDC2401D0BDF5A00C3D2A5 /* LaunchScreen.storyboard */,
 				3EEDC2431D0BDF5A00C3D2A5 /* Info.plist */,
+				3E2542B51D0C346B00E33876 /* SelectDateViewController.swift */,
 			);
 			path = tripster;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E2542B61D0C346B00E33876 /* SelectDateViewController.swift in Sources */,
 				3E2542AE1D0C027D00E33876 /* Meal.swift in Sources */,
 				3E2542B01D0C116E00E33876 /* MealTableViewTableViewController.swift in Sources */,
 				3EEDC23A1D0BDF5A00C3D2A5 /* ViewController.swift in Sources */,

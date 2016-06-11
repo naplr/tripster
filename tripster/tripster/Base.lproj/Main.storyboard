@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="80b-ku-cfu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="sJo-oe-Ldv">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -123,6 +123,86 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JmB-JG-KAF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-543" y="35"/>
+        </scene>
+        <!--Select Date View Controller-->
+        <scene sceneID="Ln3-lO-BQf">
+            <objects>
+                <viewController id="sJo-oe-Ldv" customClass="SelectDateViewController" customModule="tripster" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9QE-BO-91U"/>
+                        <viewControllerLayoutGuide type="bottom" id="ehB-AQ-A0m"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DsB-Hq-Zyr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="uAo-mW-2Ac">
+                                <rect key="frame" x="0.0" y="57" width="600" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="487339306.88611501">
+                                    <!--2016-06-11 12:01:46 +0000-->
+                                </date>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="57" width="400" height="216"/>
+                                </variation>
+                                <connections>
+                                    <action selector="startDatePickerChanged:" destination="sJo-oe-Ldv" eventType="valueChanged" id="eiE-en-fs7"/>
+                                </connections>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hh1-tl-RCe">
+                                <rect key="frame" x="269" y="200" width="63" height="30"/>
+                                <state key="normal" title="End Date"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="205" width="400" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="endDateClicked:" destination="sJo-oe-Ldv" eventType="touchUpInside" id="3Jc-iy-MwG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oxp-lk-TQX">
+                                <rect key="frame" x="451" y="-27" width="37" height="30"/>
+                                <state key="normal" title="Done"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JT9-15-nu5">
+                                <rect key="frame" x="279" y="480" width="37" height="30"/>
+                                <state key="normal" title="Done"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="182" y="483" width="37" height="30"/>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hD6-sE-AS9">
+                                <rect key="frame" x="0.0" y="273" width="600" height="38"/>
+                                <color key="backgroundColor" red="1" green="0.36483815344380344" blue="0.40300758335931874" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Select"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="273" width="400" height="38"/>
+                                </variation>
+                                <connections>
+                                    <action selector="doneButtonClicked:" destination="sJo-oe-Ldv" eventType="touchUpInside" id="RgH-3f-5rg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2rI-OE-kt9">
+                                <rect key="frame" x="256" y="80" width="89" height="30"/>
+                                <state key="normal" title="Start Date"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="84" width="392" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="startDateClicked:" destination="sJo-oe-Ldv" eventType="touchUpInside" id="rLT-Vt-YCo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="datePicker" destination="uAo-mW-2Ac" id="HBJ-Qa-mE1"/>
+                        <outlet property="doneButton" destination="hD6-sE-AS9" id="laM-26-cMn"/>
+                        <outlet property="endDateButton" destination="Hh1-tl-RCe" id="36O-ab-SBi"/>
+                        <outlet property="startDateButton" destination="2rI-OE-kt9" id="67W-cD-TVb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2rC-1m-5Oj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-540" y="811.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bD5-Oa-4vv">
