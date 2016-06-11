@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3E3B31A51D0BDC920001BF62"
+               BlueprintIdentifier = "3EEDC2331D0BDF5A00C3D2A5"
                BuildableName = "tripster.app"
                BlueprintName = "tripster"
                ReferencedContainer = "container:tripster.xcodeproj">
@@ -32,7 +32,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3E3B31A51D0BDC920001BF62"
+            BlueprintIdentifier = "3EEDC2331D0BDF5A00C3D2A5"
             BuildableName = "tripster.app"
             BlueprintName = "tripster"
             ReferencedContainer = "container:tripster.xcodeproj">
@@ -55,7 +55,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3E3B31A51D0BDC920001BF62"
+            BlueprintIdentifier = "3EEDC2331D0BDF5A00C3D2A5"
             BuildableName = "tripster.app"
             BlueprintName = "tripster"
             ReferencedContainer = "container:tripster.xcodeproj">
@@ -74,7 +74,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3E3B31A51D0BDC920001BF62"
+            BlueprintIdentifier = "3EEDC2331D0BDF5A00C3D2A5"
             BuildableName = "tripster.app"
             BlueprintName = "tripster"
             ReferencedContainer = "container:tripster.xcodeproj">
