@@ -26,6 +26,7 @@ class SelectImageViewController: UIViewController {
     
     var currentImageIndex = 0
     var selectedImages:[UIImage] = []
+    var currentBlurView:UIVisualEffectView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,19 +46,12 @@ class SelectImageViewController: UIViewController {
         
         self.mainImage.image = self.images[0]
         
-        self.backgroundImage.image = self.images[self.currentImageIndex]
-        
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
-        let blurView = UIVisualEffectView(effect: blurEffect)
-        blurView.frame = self.backgroundImage.frame
-        
-        self.view.insertSubview(blurView, atIndex: 5)
-        
-        
-        
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "page5")!)
-        // Do any additional setup after loading the view.
-
+        self.backgroundImage.image = self.mainImage.image
+    }
+    
+    
+    override func viewDidLayoutSubviews() {
+        updateBackgroundImage()
     }
 
     override func didReceiveMemoryWarning() {
@@ -81,17 +75,27 @@ class SelectImageViewController: UIViewController {
         if self.currentImageIndex >= self.images.count {
             self.mainImage.hidden = true
             self.doneButton.hidden = false
+            self.backgroundImage.hidden = true
             
         } else {
             self.mainImage.image = self.images[self.currentImageIndex]
-            self.backgroundImage.image = self.images[self.currentImageIndex]
-            
-            let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
-            let blurView = UIVisualEffectView(effect: blurEffect)
-            blurView.frame = self.backgroundImage.frame
-            
-            self.view.insertSubview(blurView, atIndex: 4)
+            updateBackgroundImage()
         }
+    }
+    
+    func updateBackgroundImage() {
+        if self.currentBlurView != nil {
+            self.currentBlurView.removeFromSuperview()
+        }
+        
+        self.backgroundImage.image = self.mainImage.image
+        
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        let blurView = UIVisualEffectView(effect: blurEffect)
+        blurView.frame = self.backgroundImage.frame
+        
+        self.currentBlurView = blurView
+        self.view.insertSubview(blurView, aboveSubview: self.backgroundImage)
     }
     
     func getDate(date: NSDate) -> (Int, Int) {
