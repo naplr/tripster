@@ -21,6 +21,8 @@ class SelectImageViewController: UIViewController {
     @IBOutlet weak var yesButton: UIButton!
     @IBOutlet weak var noButton: UIButton!
     @IBOutlet weak var mainImage: UIImageView!
+    @IBOutlet weak var backgroundImage: UIImageView!
+    @IBOutlet weak var doneButton: UIButton!
     
     var currentImageIndex = 0
     var selectedImages:[UIImage] = []
@@ -37,10 +39,19 @@ class SelectImageViewController: UIViewController {
         (endMonth, endDay) = getDate(endDate)
         
         dateLabel.text = "\(startDay)-\(startMonth) TO \(endDay)-\(endMonth)"
+        doneButton.hidden = true
         
         fetchPhotosInRange(startDate, endDate: endDate)
         
         self.mainImage.image = self.images[0]
+        
+        self.backgroundImage.image = self.images[self.currentImageIndex]
+        
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        let blurView = UIVisualEffectView(effect: blurEffect)
+        blurView.frame = self.backgroundImage.frame
+        
+        self.view.insertSubview(blurView, atIndex: 5)
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,9 +74,17 @@ class SelectImageViewController: UIViewController {
         
         if self.currentImageIndex >= self.images.count {
             self.mainImage.hidden = true
+            self.doneButton.hidden = false
             
         } else {
             self.mainImage.image = self.images[self.currentImageIndex]
+            self.backgroundImage.image = self.images[self.currentImageIndex]
+            
+            let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+            let blurView = UIVisualEffectView(effect: blurEffect)
+            blurView.frame = self.backgroundImage.frame
+            
+            self.view.insertSubview(blurView, atIndex: 4)
         }
     }
     
