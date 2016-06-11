@@ -15,7 +15,12 @@ class SelectDateViewController: UIViewController {
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var doneButton: UIButton!
     
+    var startDate: NSDate!
+    var endDate: NSDate!
+    
     var currentButton: UIButton!
+    
+    var isStartDate: Bool = false;
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +51,7 @@ class SelectDateViewController: UIViewController {
         doneButton.hidden = false
         
         currentButton = startDateButton
+        self.isStartDate = true
         hideButton()
     }
     
@@ -54,6 +60,7 @@ class SelectDateViewController: UIViewController {
         doneButton.hidden = false
         
         currentButton = endDateButton
+        self.isStartDate = false
         hideButton()
     }
     
@@ -62,6 +69,13 @@ class SelectDateViewController: UIViewController {
         dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
         
         let strDate = dateFormatter.stringFromDate(datePicker.date)
+        
+        if isStartDate {
+            startDate = datePicker.date
+        } else {
+            endDate = datePicker.date
+        }
+        
         currentButton.setTitle(strDate, forState: .Normal)
     }
     
@@ -82,5 +96,12 @@ class SelectDateViewController: UIViewController {
     }
     */
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if let view = segue.destinationViewController as? SelectImageViewController {
+            view.startDate = startDate
+            view.endDate = endDate
+        }
+    }
 }
 

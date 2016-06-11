@@ -136,7 +136,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="uAo-mW-2Ac">
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="uAo-mW-2Ac">
                                 <rect key="frame" x="0.0" y="57" width="600" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="487339306.88611501">
                                     <!--2016-06-11 12:01:46 +0000-->
@@ -168,6 +168,9 @@
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="182" y="483" width="37" height="30"/>
                                 </variation>
+                                <connections>
+                                    <segue destination="jMG-MN-7yZ" kind="show" id="axD-fG-T7R"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hD6-sE-AS9">
                                 <rect key="frame" x="0.0" y="273" width="600" height="38"/>
@@ -203,6 +206,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2rC-1m-5Oj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-540" y="811.5"/>
+        </scene>
+        <!--Select Image View Controller-->
+        <scene sceneID="yZh-2C-HU8">
+            <objects>
+                <viewController id="jMG-MN-7yZ" customClass="SelectImageViewController" customModule="tripster" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5ne-8Z-wUc"/>
+                        <viewControllerLayoutGuide type="bottom" id="bRu-au-P3h"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UYS-AJ-Poc">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello World" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OOc-Si-Uci">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="112" y="159" width="177" height="21"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="OOc-Si-Uci"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="OOc-Si-Uci"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="OOc-Si-Uci" id="AdQ-Uj-kCK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I7s-mE-Bh1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="384" y="804"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bD5-Oa-4vv">
