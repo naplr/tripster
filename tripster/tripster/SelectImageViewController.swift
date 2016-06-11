@@ -13,7 +13,7 @@ class SelectImageViewController: UIViewController {
     var startDate: NSDate!
     var endDate: NSDate!
     
-    var images:[UIImage] = []
+    var images:[ImageWithDetail] = []
 
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var totalImageLabel: UILabel!
@@ -26,26 +26,21 @@ class SelectImageViewController: UIViewController {
     @IBOutlet weak var backgroundKy: UIImageView!
     
     var currentImageIndex = 0
-    var selectedImages:[UIImage] = []
+    var selectedImages:[ImageWithDetail] = []
     var currentBlurView:UIVisualEffectView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var startMonth: Int
-        var endMonth: Int
-        var startDay: Int
-        var endDay: Int
+        let startDay = MyDate(date: startDate)
+        let endDay = MyDate(date: endDate)
         
-        (startMonth, startDay) = getDate(startDate)
-        (endMonth, endDay) = getDate(endDate)
-        
-        dateLabel.text = "\(startDay)-\(startMonth) TO \(endDay)-\(endMonth)"
+        dateLabel.text = "\(startDay.day)-\(startDay.day) TO \(endDay.day)-\(endDay.month)"
         doneButton.hidden = true
         
         fetchPhotosInRange(startDate, endDate: endDate)
         
-        self.mainImage.image = self.images[0]
+        self.mainImage.image = self.images[0].image
         
         self.backgroundImage.image = self.mainImage.image
         
@@ -85,7 +80,7 @@ class SelectImageViewController: UIViewController {
             self.backgroundImage.hidden = true
             
         } else {
-            self.mainImage.image = self.images[self.currentImageIndex]
+            self.mainImage.image = self.images[self.currentImageIndex].image
             updateBackgroundImage()
         }
     }
@@ -103,13 +98,6 @@ class SelectImageViewController: UIViewController {
         
         self.currentBlurView = blurView
         self.view.insertSubview(blurView, aboveSubview: self.backgroundImage)
-    }
-    
-    func getDate(date: NSDate) -> (Int, Int) {
-        let calendar = NSCalendar.currentCalendar()
-        let components = calendar.components([.Day , .Month , .Year], fromDate: date)
-        
-        return (components.month, components.day)
     }
     
     func fetchPhotosInRange(startDate:NSDate, endDate:NSDate) {
@@ -137,7 +125,7 @@ class SelectImageViewController: UIViewController {
                         if let imageData = imageData {
                             if let image = UIImage(data: imageData) {
                                 // Add the returned image to your array
-                                self.images += [image]
+                                self.images += [ImageWithDetail(image: image, creationDate: asset.creationDate,location: asset.location)]
                             }
                         }
                         if self.images.count == fetchResult.count {
@@ -168,7 +156,8 @@ class SelectImageViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        if let view = segue.destinationViewController as? ImageViewerViewController {
+        if let view = segue.destinationViewController as? DayImageViewerViewController {
+            view.allImages = self.images
             view.selectedImages = self.selectedImages
         }
     }

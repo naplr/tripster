@@ -371,7 +371,7 @@
                                     <rect key="frame" x="179" y="282" width="42" height="30"/>
                                 </variation>
                                 <connections>
-                                    <segue destination="wJJ-cE-HOS" kind="show" id="pfN-li-wzC"/>
+                                    <segue destination="HWk-Kj-T8K" kind="show" id="MQi-cv-WyD"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="total selected:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u0o-gd-Fwx">
@@ -467,10 +467,10 @@
             </objects>
             <point key="canvasLocation" x="1518" y="807.75"/>
         </scene>
-        <!--View Controller-->
+        <!--Day Image Viewer View Controller-->
         <scene sceneID="pCw-3S-N2u">
             <objects>
-                <viewController id="HWk-Kj-T8K" sceneMemberID="viewController">
+                <viewController id="HWk-Kj-T8K" customClass="DayImageViewerViewController" customModule="tripster" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Pa4-TW-s2z"/>
                         <viewControllerLayoutGuide type="bottom" id="qYV-jx-3eK"/>
@@ -478,8 +478,29 @@
                     <view key="view" contentMode="scaleToFill" id="FAq-cH-7Hk">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dQj-NN-afG">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="20" width="400" height="780"/>
+                                </variation>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="dQj-NN-afG"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="dQj-NN-afG"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="scrollView" destination="dQj-NN-afG" id="oaK-VC-Zcd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LOq-4s-cb0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
