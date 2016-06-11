@@ -78,7 +78,8 @@ class SelectImageViewController: UIViewController {
             self.mainImage.hidden = true
             self.doneButton.hidden = false
             self.backgroundImage.hidden = true
-            
+            self.yesButton.hidden = true
+            self.noButton.hidden = true
         } else {
             self.mainImage.image = self.images[self.currentImageIndex].image
             updateBackgroundImage()
