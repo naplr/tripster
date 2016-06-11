@@ -22,6 +22,9 @@ class InterimViewController: UIViewController {
         if let view = segue.destinationViewController as? DayImageViewerViewController {
             view.allImages = self.allImages
             view.selectedImages = self.selectedImages
+        } else if let view = segue.destinationViewController as? DayImageViewerTableViewController {
+            view.allImages = self.allImages
+            view.selectedImages = self.selectedImages
         }
     }
 }

@@ -516,6 +516,88 @@
             </objects>
             <point key="canvasLocation" x="2530.5" y="807.75"/>
         </scene>
+        <!--Day Image Viewer Table View Controller-->
+        <scene sceneID="9ja-pi-fCt">
+            <objects>
+                <tableViewController id="91O-8Y-cLC" customClass="DayImageViewerTableViewController" customModule="tripster" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="164" sectionHeaderHeight="28" sectionFooterHeight="28" id="v5u-eT-VR2">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DayImageViewCell" rowHeight="164" id="wAP-F1-9PK" customClass="DayImageViewerTableViewCell" customModule="tripster" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wAP-F1-9PK" id="54A-X8-mgi">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nTt-b3-8NG">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                            <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="0.0" y="0.5" width="400" height="163.5"/>
+                                            </variation>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lge-Th-UTb">
+                                            <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="36" y="60" width="42" height="43"/>
+                                            </variation>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Memories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R1D-gS-BCR">
+                                            <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="170" y="17" width="147" height="38"/>
+                                            </variation>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oiX-Bk-AkM">
+                                            <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="170" y="104" width="147" height="38"/>
+                                            </variation>
+                                        </label>
+                                    </subviews>
+                                    <variation key="default">
+                                        <mask key="subviews">
+                                            <exclude reference="nTt-b3-8NG"/>
+                                            <exclude reference="Lge-Th-UTb"/>
+                                            <exclude reference="R1D-gS-BCR"/>
+                                            <exclude reference="oiX-Bk-AkM"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="heightClass=regular-widthClass=compact">
+                                        <mask key="subviews">
+                                            <include reference="nTt-b3-8NG"/>
+                                            <include reference="Lge-Th-UTb"/>
+                                            <include reference="R1D-gS-BCR"/>
+                                            <include reference="oiX-Bk-AkM"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dateLabel" destination="oiX-Bk-AkM" id="NDQ-qK-kQM"/>
+                                    <outlet property="dayImage" destination="nTt-b3-8NG" id="zBC-Cd-JPQ"/>
+                                    <outlet property="numDayLabel" destination="Lge-Th-UTb" id="TUz-ki-UJ2"/>
+                                    <outlet property="totalImageLabel" destination="R1D-gS-BCR" id="Tnv-gX-oI6"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="91O-8Y-cLC" id="R2q-Md-npy"/>
+                            <outlet property="delegate" destination="91O-8Y-cLC" id="TKt-QN-iIH"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nfu-03-4CU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2530.5" y="1497.75"/>
+        </scene>
         <!--Interim View Controller-->
         <scene sceneID="0Nx-9f-XJQ">
             <objects>
@@ -534,7 +616,7 @@
                                     <rect key="frame" x="177" y="313" width="46" height="30"/>
                                 </variation>
                                 <connections>
-                                    <segue destination="HWk-Kj-T8K" kind="show" id="rWL-rm-e2x"/>
+                                    <segue destination="91O-8Y-cLC" kind="show" id="VaV-eW-gAU"/>
                                 </connections>
                             </button>
                         </subviews>
