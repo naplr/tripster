@@ -21,6 +21,7 @@
 		3ED224211D0CB8B700535005 /* DayImageViewerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED224201D0CB8B700535005 /* DayImageViewerTableViewCell.swift */; };
 		3ED224231D0CCA5B00535005 /* SingleDayImageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED224221D0CCA5B00535005 /* SingleDayImageTableViewController.swift */; };
 		3ED224251D0CCCA200535005 /* SingleDayImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED224241D0CCCA200535005 /* SingleDayImageTableViewCell.swift */; };
+		3ED224271D0CD11B00535005 /* TabImageViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED224261D0CD11B00535005 /* TabImageViewerViewController.swift */; };
 		3EEDC2381D0BDF5A00C3D2A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEDC2371D0BDF5A00C3D2A5 /* AppDelegate.swift */; };
 		3EEDC23A1D0BDF5A00C3D2A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEDC2391D0BDF5A00C3D2A5 /* ViewController.swift */; };
 		3EEDC23D1D0BDF5A00C3D2A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EEDC23B1D0BDF5A00C3D2A5 /* Main.storyboard */; };
@@ -45,6 +46,7 @@
 		3ED224201D0CB8B700535005 /* DayImageViewerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayImageViewerTableViewCell.swift; sourceTree = "<group>"; };
 		3ED224221D0CCA5B00535005 /* SingleDayImageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleDayImageTableViewController.swift; sourceTree = "<group>"; };
 		3ED224241D0CCCA200535005 /* SingleDayImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleDayImageTableViewCell.swift; sourceTree = "<group>"; };
+		3ED224261D0CD11B00535005 /* TabImageViewerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabImageViewerViewController.swift; sourceTree = "<group>"; };
 		3EEDC2341D0BDF5A00C3D2A5 /* tripster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tripster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EEDC2371D0BDF5A00C3D2A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3EEDC2391D0BDF5A00C3D2A5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				3EEDC2431D0BDF5A00C3D2A5 /* Info.plist */,
 				3E2542B51D0C346B00E33876 /* SelectDateViewController.swift */,
 				3ED224141D0C638300535005 /* ImageViewerViewController.swift */,
+				3ED224261D0CD11B00535005 /* TabImageViewerViewController.swift */,
 				3ED224161D0C85C200535005 /* DayImageViewerViewController.swift */,
 				6EFB71961D0C95E9003E3DAF /* LandingPageViewController.swift */,
 				6EFB71981D0C95FE003E3DAF /* MainMenuViewController.swift */,
@@ -189,6 +192,7 @@
 				3E2542AE1D0C027D00E33876 /* Meal.swift in Sources */,
 				3ED224251D0CCCA200535005 /* SingleDayImageTableViewCell.swift in Sources */,
 				3E2542B01D0C116E00E33876 /* MealTableViewTableViewController.swift in Sources */,
+				3ED224271D0CD11B00535005 /* TabImageViewerViewController.swift in Sources */,
 				3ED2241B1D0C9DC100535005 /* MyDate.swift in Sources */,
 				3ED224211D0CB8B700535005 /* DayImageViewerTableViewCell.swift in Sources */,
 				3ED224131D0C384100535005 /* SelectImageViewController.swift in Sources */,

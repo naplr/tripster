@@ -141,6 +141,14 @@ class DayImageViewerTableViewController: UITableViewController {
                 view.date = key
                 view.todaySelectedImages = imageGroups[key]!
             }
+        } else if let view = segue.destinationViewController as? TabImageViewerViewController {
+            if let selectedCell = sender as? DayImageViewerTableViewCell {
+                let indexPath = tableView.indexPathForCell(selectedCell)!
+                let key = keys[indexPath.row]
+                
+                view.date = key
+                view.todaySelectedImages = imageGroups[key]!
+            }
         }
     }
 }

@@ -585,7 +585,7 @@
                                     <outlet property="dayImage" destination="nTt-b3-8NG" id="zBC-Cd-JPQ"/>
                                     <outlet property="numDayLabel" destination="Lge-Th-UTb" id="TUz-ki-UJ2"/>
                                     <outlet property="totalImageLabel" destination="R1D-gS-BCR" id="Tnv-gX-oI6"/>
-                                    <segue destination="wJJ-cE-HOS" kind="show" id="4UF-oa-NJW"/>
+                                    <segue destination="PiI-kL-XZN" kind="show" id="Cbe-eY-f5H"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -597,7 +597,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nfu-03-4CU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2530.5" y="1497.75"/>
+            <point key="canvasLocation" x="2530.5" y="1503.75"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="Blk-ki-kwE">
@@ -623,6 +623,102 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tc7-zp-dC8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3457.5" y="1497.75"/>
+        </scene>
+        <!--Item 2-->
+        <scene sceneID="pKn-MU-ZuI">
+            <objects>
+                <viewController id="JEF-uX-g5R" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pfi-M0-gWL"/>
+                        <viewControllerLayoutGuide type="bottom" id="bDP-At-nP9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RJ3-9U-XSN">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UXx-AU-Mtc">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="179" y="153" width="42" height="21"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="UXx-AU-Mtc"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="UXx-AU-Mtc"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="Fqo-4v-5fi"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VNz-v6-2cd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4306.5" y="2574.75"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="YaL-l7-SG0">
+            <objects>
+                <viewController id="PiI-kL-XZN" customClass="TabImageViewerViewController" customModule="tripster" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LOa-ye-rbG"/>
+                        <viewControllerLayoutGuide type="bottom" id="WQS-Jm-SMi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wQi-xm-CZr">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="olT-c3-wp1">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="68" width="400" height="683"/>
+                                </variation>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="olT-c3-wp1"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="olT-c3-wp1"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="2LO-z3-YFd"/>
+                    <connections>
+                        <outlet property="scrollView" destination="olT-c3-wp1" id="pTZ-Ff-xgM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D6T-pK-mhq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4306.5" y="1914.75"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="UtJ-mZ-i4Q">
+            <objects>
+                <tabBarController id="Ag1-tX-HDQ" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="w7T-mD-3PJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="PiI-kL-XZN" kind="relationship" relationship="viewControllers" id="j3l-QG-jdL"/>
+                        <segue destination="JEF-uX-g5R" kind="relationship" relationship="viewControllers" id="X3n-91-Ke3"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XHz-dh-sfU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3457.5" y="2237.25"/>
         </scene>
         <!--Interim View Controller-->
         <scene sceneID="0Nx-9f-XJQ">
@@ -685,4 +781,7 @@
     <resources>
         <image name="nrimages" width="2367" height="1578"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="j3l-QG-jdL"/>
+    </inferredMetricsTieBreakers>
 </document>
