@@ -157,7 +157,7 @@ class SelectImageViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        if let view = segue.destinationViewController as? DayImageViewerViewController {
+        if let view = segue.destinationViewController as? InterimViewController {
             view.allImages = self.images
             view.selectedImages = self.selectedImages
         }

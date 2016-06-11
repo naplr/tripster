@@ -534,7 +534,7 @@
                                     <rect key="frame" x="177" y="313" width="46" height="30"/>
                                 </variation>
                                 <connections>
-                                    <segue destination="HWk-Kj-T8K" kind="show" id="LDA-k1-5Y3"/>
+                                    <segue destination="HWk-Kj-T8K" kind="show" id="rWL-rm-e2x"/>
                                 </connections>
                             </button>
                         </subviews>
