@@ -15,7 +15,6 @@ class SelectImageViewController: UIViewController {
     
     var images:[ImageWithDetail] = []
 
-    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var totalImageLabel: UILabel!
     @IBOutlet weak var totalSelectedLabels: UILabel!
     @IBOutlet weak var yesButton: UIButton!
@@ -32,10 +31,10 @@ class SelectImageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let startDay = MyDate(date: startDate)
-        let endDay = MyDate(date: endDate)
+        //let startDay = MyDate(date: startDate)
+        //let endDay = MyDate(date: endDate)
         
-        dateLabel.text = "\(startDay.day)-\(startDay.day) TO \(endDay.day)-\(endDay.month)"
+        
         doneButton.hidden = true
         
         fetchPhotosInRange(startDate, endDate: endDate)

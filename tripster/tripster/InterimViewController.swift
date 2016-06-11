@@ -16,6 +16,9 @@ class InterimViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+        
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "page6")!)
+        // Do any additional setup after loading the view.
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
