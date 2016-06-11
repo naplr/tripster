@@ -302,18 +302,6 @@
                                     <action selector="noButtonClicked:" destination="jMG-MN-7yZ" eventType="touchUpInside" id="Zcu-TP-FAn"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cT4-5M-sco">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="DONE">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="323" y="742" width="42" height="30"/>
-                                </variation>
-                                <connections>
-                                    <segue destination="wJJ-cE-HOS" kind="show" id="7uz-Gx-Uy9"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="start date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GU8-ft-2fo">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -323,6 +311,18 @@
                                     <rect key="frame" x="166" y="698" width="400" height="36"/>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cT4-5M-sco">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="DONE">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="179" y="282" width="42" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="wJJ-cE-HOS" kind="show" id="7uz-Gx-Uy9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -333,8 +333,8 @@
                                 <exclude reference="zdz-ak-xAb"/>
                                 <exclude reference="lHr-n6-8Uk"/>
                                 <exclude reference="bOv-0R-za5"/>
-                                <exclude reference="cT4-5M-sco"/>
                                 <exclude reference="GU8-ft-2fo"/>
+                                <exclude reference="cT4-5M-sco"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -345,8 +345,8 @@
                                 <include reference="zdz-ak-xAb"/>
                                 <include reference="lHr-n6-8Uk"/>
                                 <include reference="bOv-0R-za5"/>
-                                <include reference="cT4-5M-sco"/>
                                 <include reference="GU8-ft-2fo"/>
+                                <include reference="cT4-5M-sco"/>
                             </mask>
                         </variation>
                     </view>
@@ -363,7 +363,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I7s-mE-Bh1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="384" y="822"/>
+            <point key="canvasLocation" x="327" y="804"/>
         </scene>
         <!--Image Viewer View Controller-->
         <scene sceneID="A0H-Rk-ihv">
