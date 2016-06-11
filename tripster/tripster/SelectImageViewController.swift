@@ -129,5 +129,11 @@ class SelectImageViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if let view = segue.destinationViewController as? ImageViewerViewController {
+            view.selectedImages = self.selectedImages
+        }
+    }
 }
