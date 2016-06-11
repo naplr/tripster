@@ -585,6 +585,7 @@
                                     <outlet property="dayImage" destination="nTt-b3-8NG" id="zBC-Cd-JPQ"/>
                                     <outlet property="numDayLabel" destination="Lge-Th-UTb" id="TUz-ki-UJ2"/>
                                     <outlet property="totalImageLabel" destination="R1D-gS-BCR" id="Tnv-gX-oI6"/>
+                                    <segue destination="wJJ-cE-HOS" kind="show" id="4UF-oa-NJW"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -597,6 +598,31 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nfu-03-4CU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2530.5" y="1497.75"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="Blk-ki-kwE">
+            <objects>
+                <tableViewController id="JUz-oz-Uxx" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="169" sectionHeaderHeight="28" sectionFooterHeight="28" id="6tu-OO-SIW">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="169" id="Zz7-Qm-Oyt" customClass="SingleDayImageTableViewCell" customModule="tripster" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zz7-Qm-Oyt" id="opT-9Z-brZ">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="JUz-oz-Uxx" id="sEi-07-rnG"/>
+                            <outlet property="delegate" destination="JUz-oz-Uxx" id="PON-By-DC4"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tc7-zp-dC8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3457.5" y="1497.75"/>
         </scene>
         <!--Interim View Controller-->
         <scene sceneID="0Nx-9f-XJQ">

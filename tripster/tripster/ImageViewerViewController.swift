@@ -9,22 +9,31 @@
 import UIKit
 
 class ImageViewerViewController: UIViewController {
-    
-    var selectedImages:[UIImage] = []
+    var todaySelectedImages:[ImageWithDetail] = []
+    var date: Int = 0
 
     @IBOutlet weak var scrollView: UIScrollView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print(selectedImages.count)
         // Do any additional setup after loading the view.
+        let heightPerItem = 400
+        let itemWidth = CGFloat(400)
+        let gapBetweenItem = 30
         
-        scrollView.contentSize.height = CGFloat((selectedImages.count + 2) * 430)
+        let imageCount = self.todaySelectedImages.count
         
+        // Do any additional setup after loading the view.
+        scrollView.contentSize.height = CGFloat((imageCount + 2) * heightPerItem)
         
-        for (index, image) in selectedImages.enumerate() {
-            let imageView = UIImageView(frame: CGRectMake(0, CGFloat(index*(400+30)), 400, 400))
-            imageView.image = image;
+        for (index, image) in todaySelectedImages.enumerate() {
+            let imageView = UIImageView(frame: CGRectMake(
+                0,
+                CGFloat(index*(heightPerItem+gapBetweenItem)),
+                itemWidth,
+                CGFloat(heightPerItem)))
+            imageView.image = image.image
+            
             self.scrollView.addSubview(imageView);
         }
     }

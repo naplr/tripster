@@ -1,5 +1,5 @@
 //
-//  DayImageViewerTableViewController.swift
+//  SingleDayImageTableViewController.swift
 //  tripster
 //
 //  Created by Napol Rachatasumrit on 6/12/16.
@@ -8,19 +8,13 @@
 
 import UIKit
 
-class DayImageViewerTableViewController: UITableViewController {
-
-    var allImages:[ImageWithDetail] = []
-    var selectedImages:[ImageWithDetail] = []
+class SingleDayImageTableViewController: UITableViewController {
     
-    var imageGroups = [Int:[ImageWithDetail]]()
-    var keys:[Int] = []
-
+    var todaySelectedImages:[ImageWithDetail] = []
+    var date: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageGroups = groupImagesByDate(selectedImages)
-        keys = [Int](imageGroups.keys)
-        keys = keys.sort()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -29,23 +23,6 @@ class DayImageViewerTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
-    
-    func groupImagesByDate(images: [ImageWithDetail]) -> [Int:[ImageWithDetail]] {
-        var result = [Int:[ImageWithDetail]]()
-        for image in images {
-            let creationDate = MyDate(date: image.creationDate!).getValue()
-            
-            if var group = result[creationDate] {
-                group += [image]
-                result[creationDate] = group
-            } else {
-                result[creationDate] = [image]
-            }
-        }
-        
-        return result
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -54,30 +31,24 @@ class DayImageViewerTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        // #warning Incomplete implementation, return the number of sections
+        return 0
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return imageGroups.count
+        // #warning Incomplete implementation, return the number of rows
+        return 0
     }
 
+    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cellIdentifier = "DayImageViewCell"
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! DayImageViewerTableViewCell
-        
-        let key = self.keys[indexPath.row]
-        let imageGroup = imageGroups[key]
-        
-        let dateString = "\(key/100)/\(key%100)"
-        cell.dateLabel.text = dateString
-        cell.numDayLabel.text = "\(indexPath.row + 1)"
-        cell.dayImage.image = imageGroup![0].image
-        cell.totalImageLabel.text = "\(imageGroup!.count)"
+        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
 
         // Configure the cell...
 
         return cell
     }
+    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -123,24 +94,5 @@ class DayImageViewerTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let view = segue.destinationViewController as? SingleDayImageTableViewController {
-            if let selectedCell = sender as? DayImageViewerTableViewCell {
-                let indexPath = tableView.indexPathForCell(selectedCell)!
-                let key = keys[indexPath.row]
-                
-                view.date = key
-                view.todaySelectedImages = imageGroups[key]!
-            }
-        } else if let view = segue.destinationViewController as? ImageViewerViewController {
-            if let selectedCell = sender as? DayImageViewerTableViewCell {
-                let indexPath = tableView.indexPathForCell(selectedCell)!
-                let key = keys[indexPath.row]
-                
-                view.date = key
-                view.todaySelectedImages = imageGroups[key]!
-            }
-        }
-    }
+
 }
