@@ -15,19 +15,65 @@ class SelectImageViewController: UIViewController {
     
     var images:[UIImage] = []
 
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var totalImageLabel: UILabel!
+    @IBOutlet weak var totalSelectedLabels: UILabel!
+    @IBOutlet weak var yesButton: UIButton!
+    @IBOutlet weak var noButton: UIButton!
+    @IBOutlet weak var mainImage: UIImageView!
+    
+    var currentImageIndex = 0
+    var selectedImages:[UIImage] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        label.text = "\(startDate) and \(endDate)"
+        var startMonth: Int
+        var endMonth: Int
+        var startDay: Int
+        var endDay: Int
+        
+        (startMonth, startDay) = getDate(startDate)
+        (endMonth, endDay) = getDate(endDate)
+        
+        dateLabel.text = "\(startDay)-\(startMonth) TO \(endDay)-\(endMonth)"
         
         fetchPhotosInRange(startDate, endDate: endDate)
+        
+        self.mainImage.image = self.images[0]
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func yesButtonClicked(sender: AnyObject) {
+        self.selectedImages += [self.images[self.currentImageIndex]]
+        self.totalSelectedLabels.text = "Total Selected \(self.selectedImages.count)"
+        nextImage()
+    }
+    
+    @IBAction func noButtonClicked(sender: AnyObject) {
+        nextImage()
+    }
+    
+    func nextImage() {
+        self.currentImageIndex++
+        
+        if self.currentImageIndex >= self.images.count {
+            self.mainImage.hidden = true
+            
+        } else {
+            self.mainImage.image = self.images[self.currentImageIndex]
+        }
+    }
+    
+    func getDate(date: NSDate) -> (Int, Int) {
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components([.Day , .Month , .Year], fromDate: date)
+        
+        return (components.month, components.day)
     }
     
     func fetchPhotosInRange(startDate:NSDate, endDate:NSDate) {
@@ -65,6 +111,7 @@ class SelectImageViewController: UIViewController {
                             // are found; but you should also handle
                             // the case where they're not all found.)
                             print(self.images.count)
+                            self.totalImageLabel.text = "Total Images: \(self.images.count)"
                         }
                     })
                 }

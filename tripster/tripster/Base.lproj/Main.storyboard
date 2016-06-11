@@ -218,12 +218,6 @@
                     <view key="view" contentMode="scaleToFill" id="UYS-AJ-Poc">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zdz-ak-xAb">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="20" width="400" height="492"/>
-                                </variation>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="total images:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OOc-Si-Uci">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -242,19 +236,21 @@
                                     <rect key="frame" x="0.0" y="579" width="400" height="36"/>
                                 </variation>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zdz-ak-xAb">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="20" width="400" height="492"/>
+                                </variation>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lHr-n6-8Uk">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="YES"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="264" y="713" width="69" height="55"/>
+                                    <rect key="frame" x="264" y="667" width="69" height="55"/>
                                 </variation>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bOv-0R-za5">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="NO"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="67" y="713" width="69" height="55"/>
-                                </variation>
+                                <connections>
+                                    <action selector="yesButtonClicked:" destination="jMG-MN-7yZ" eventType="touchUpInside" id="vkv-oz-7O3"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="start date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GU8-ft-2fo">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -265,31 +261,57 @@
                                     <rect key="frame" x="0.0" y="623" width="400" height="36"/>
                                 </variation>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Done" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ywk-nq-ZdQ">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="180" y="294" width="41" height="21"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bOv-0R-za5">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="NO"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="69" y="667" width="69" height="55"/>
+                                </variation>
+                                <connections>
+                                    <action selector="noButtonClicked:" destination="jMG-MN-7yZ" eventType="touchUpInside" id="Zcu-TP-FAn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="zdz-ak-xAb"/>
                                 <exclude reference="OOc-Si-Uci"/>
                                 <exclude reference="u0o-gd-Fwx"/>
+                                <exclude reference="zdz-ak-xAb"/>
                                 <exclude reference="lHr-n6-8Uk"/>
-                                <exclude reference="bOv-0R-za5"/>
                                 <exclude reference="GU8-ft-2fo"/>
+                                <exclude reference="Ywk-nq-ZdQ"/>
+                                <exclude reference="bOv-0R-za5"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
-                                <include reference="zdz-ak-xAb"/>
                                 <include reference="OOc-Si-Uci"/>
                                 <include reference="u0o-gd-Fwx"/>
+                                <include reference="zdz-ak-xAb"/>
                                 <include reference="lHr-n6-8Uk"/>
-                                <include reference="bOv-0R-za5"/>
                                 <include reference="GU8-ft-2fo"/>
+                                <include reference="Ywk-nq-ZdQ"/>
+                                <include reference="bOv-0R-za5"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="label" destination="OOc-Si-Uci" id="AdQ-Uj-kCK"/>
+                        <outlet property="dateLabel" destination="GU8-ft-2fo" id="0M2-AD-wUP"/>
+                        <outlet property="mainImage" destination="zdz-ak-xAb" id="EHG-rN-FEa"/>
+                        <outlet property="noButton" destination="bOv-0R-za5" id="hyF-kk-FZp"/>
+                        <outlet property="totalImageLabel" destination="OOc-Si-Uci" id="Slf-ja-4at"/>
+                        <outlet property="totalSelectedLabels" destination="u0o-gd-Fwx" id="TjY-d7-HDG"/>
+                        <outlet property="yesButton" destination="lHr-n6-8Uk" id="7lO-pd-8MX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I7s-mE-Bh1" userLabel="First Responder" sceneMemberID="firstResponder"/>
