@@ -69,7 +69,7 @@ class SelectDateViewController: UIViewController {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
         
-//        let strDate = dateFormatter.stringFromDate(datePicker.date)
+       let strDate = dateFormatter.stringFromDate(datePicker.date)
         
         if isStartDate {
             startDate = datePicker.date
@@ -77,7 +77,7 @@ class SelectDateViewController: UIViewController {
             endDate = datePicker.date
         }
         
-//        currentButton.setTitle(strDate, forState: .Normal)
+       currentButton.setTitle(strDate, forState: .Normal)
     }
     
     @IBAction func doneButtonClicked(sender: AnyObject) {

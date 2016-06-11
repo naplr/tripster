@@ -23,6 +23,7 @@ class SelectImageViewController: UIViewController {
     @IBOutlet weak var mainImage: UIImageView!
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var backgroundKy: UIImageView!
     
     var currentImageIndex = 0
     var selectedImages:[UIImage] = []
@@ -47,6 +48,12 @@ class SelectImageViewController: UIViewController {
         self.mainImage.image = self.images[0]
         
         self.backgroundImage.image = self.mainImage.image
+        
+        self.backgroundKy.image = UIImage(named: "page5")
+        //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "page5")!)
+        // Do any additional setup after loading the view.
+    
+
     }
     
     
