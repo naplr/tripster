@@ -16,6 +16,7 @@
 		3ED224171D0C85C200535005 /* DayImageViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED224161D0C85C200535005 /* DayImageViewerViewController.swift */; };
 		3ED224191D0C97D600535005 /* ImageWithDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED224181D0C97D600535005 /* ImageWithDetail.swift */; };
 		3ED2241B1D0C9DC100535005 /* MyDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED2241A1D0C9DC100535005 /* MyDate.swift */; };
+		3ED2241D1D0CAC8400535005 /* InterimViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED2241C1D0CAC8400535005 /* InterimViewController.swift */; };
 		3EEDC2381D0BDF5A00C3D2A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEDC2371D0BDF5A00C3D2A5 /* AppDelegate.swift */; };
 		3EEDC23A1D0BDF5A00C3D2A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEDC2391D0BDF5A00C3D2A5 /* ViewController.swift */; };
 		3EEDC23D1D0BDF5A00C3D2A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EEDC23B1D0BDF5A00C3D2A5 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 		3ED224161D0C85C200535005 /* DayImageViewerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayImageViewerViewController.swift; sourceTree = "<group>"; };
 		3ED224181D0C97D600535005 /* ImageWithDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageWithDetail.swift; sourceTree = "<group>"; };
 		3ED2241A1D0C9DC100535005 /* MyDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDate.swift; sourceTree = "<group>"; };
+		3ED2241C1D0CAC8400535005 /* InterimViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterimViewController.swift; sourceTree = "<group>"; };
 		3EEDC2341D0BDF5A00C3D2A5 /* tripster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tripster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EEDC2371D0BDF5A00C3D2A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3EEDC2391D0BDF5A00C3D2A5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				3EEDC2371D0BDF5A00C3D2A5 /* AppDelegate.swift */,
 				3EEDC2391D0BDF5A00C3D2A5 /* ViewController.swift */,
 				3EEDC23B1D0BDF5A00C3D2A5 /* Main.storyboard */,
+				3ED2241C1D0CAC8400535005 /* InterimViewController.swift */,
 				3ED224121D0C384100535005 /* SelectImageViewController.swift */,
 				3E2542AF1D0C116E00E33876 /* MealTableViewTableViewController.swift */,
 				3E2542A91D0BFF4400E33876 /* RatingControl.swift */,
@@ -179,6 +182,7 @@
 				3EEDC23A1D0BDF5A00C3D2A5 /* ViewController.swift in Sources */,
 				3ED224191D0C97D600535005 /* ImageWithDetail.swift in Sources */,
 				3E2542AA1D0BFF4400E33876 /* RatingControl.swift in Sources */,
+				3ED2241D1D0CAC8400535005 /* InterimViewController.swift in Sources */,
 				3ED224151D0C638300535005 /* ImageViewerViewController.swift in Sources */,
 				3EEDC2381D0BDF5A00C3D2A5 /* AppDelegate.swift in Sources */,
 			);
