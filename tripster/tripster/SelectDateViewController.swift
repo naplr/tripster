@@ -28,7 +28,7 @@ class SelectDateViewController: UIViewController {
         datePicker.hidden = true
         doneButton.hidden = true
         
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "kyyes")!)
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "page3")!)
         // Do any additional setup after loading the view.
     }
     

@@ -52,6 +52,12 @@ class SelectImageViewController: UIViewController {
         blurView.frame = self.backgroundImage.frame
         
         self.view.insertSubview(blurView, atIndex: 5)
+        
+        
+        
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "page5")!)
+        // Do any additional setup after loading the view.
+
     }
 
     override func didReceiveMemoryWarning() {
