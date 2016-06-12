@@ -14,7 +14,8 @@ class DayImageViewerTableViewCell: UITableViewCell {
     @IBOutlet weak var totalImageLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var dayImage: UIImageView!
-    
+    @IBOutlet weak var dayImageIcon: UIImageView!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

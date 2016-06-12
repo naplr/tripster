@@ -17,6 +17,8 @@ class DayImageViewerViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
     override func viewDidLoad() {
+        
+        
         super.viewDidLoad()
         
         let heightPerItem = 200
@@ -25,6 +27,7 @@ class DayImageViewerViewController: UIViewController {
         
         self.imageGroups = groupImagesByDate(selectedImages)
         let numberOfDays = self.imageGroups.count
+        
         
         // Do any additional setup after loading the view.
         scrollView.contentSize.height = CGFloat((numberOfDays + 2) * heightPerItem)

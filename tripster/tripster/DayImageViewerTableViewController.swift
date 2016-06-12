@@ -12,7 +12,6 @@ class DayImageViewerTableViewController: UITableViewController {
 
     var allImages:[ImageWithDetail] = []
     var selectedImages:[ImageWithDetail] = []
-    
     var imageGroups = [Int:[ImageWithDetail]]()
     var keys:[Int] = []
 
@@ -21,6 +20,8 @@ class DayImageViewerTableViewController: UITableViewController {
         imageGroups = groupImagesByDate(selectedImages)
         keys = [Int](imageGroups.keys)
         keys = keys.sort()
+        
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "page7")!)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -73,6 +74,8 @@ class DayImageViewerTableViewController: UITableViewController {
         cell.numDayLabel.text = "\(indexPath.row + 1)"
         cell.dayImage.image = imageGroup![0].image
         cell.totalImageLabel.text = "\(imageGroup!.count)"
+        
+        cell.dayImageIcon.image = UIImage(named: "page7-2")
 
         // Configure the cell...
 
