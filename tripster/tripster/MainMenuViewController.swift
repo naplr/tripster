@@ -14,6 +14,10 @@ class MainMenuViewController: UIViewController {
     @IBOutlet weak var popupButton: UIButton!
     @IBOutlet weak var popupLabel: UILabel!
     
+    @IBAction func zeroButton(sender: AnyObject) {
+        startLoop()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,20 +30,30 @@ class MainMenuViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    func checkLocationAndPopup() {
-        let resultString = checkLocation(13.75, longitude: 100.59)
+    func startLoop() {
+        var offset = 0
+        while(true) {
+            if (checkLocationAndPopup(offset)) {
+                break
+            }
+            
+            sleep(5)
+            offset++
+        }
+    }
+    
+    func checkLocationAndPopup(offset:Int) -> Bool{
+        let latitude = 10.75 + Double(offset)
+        let longitude = 100.53
+        let resultString = checkLocation(Float(latitude), longitude: Float(longitude))
         let data = resultString!.dataUsingEncoding(NSUTF8StringEncoding)
         print(resultString)
         
-        checkResult(data!)
-    }
-    
-    func completionCallBack() {
-        
+        return checkResult(data!)
     }
     
     static let host_url = "http://127.0.0.1:8000"
-    func checkResult(resultData:NSData) {
+    func checkResult(resultData:NSData) -> Bool {
         let json = try! NSJSONSerialization.JSONObjectWithData(resultData, options: .AllowFragments)
         
         if let found = json["found"] as! String? {
@@ -58,8 +72,12 @@ class MainMenuViewController: UIViewController {
                 self.popup.hidden = false
                 self.popupButton.hidden = false
                 self.popupLabel.hidden = false
+                
+                return true
             }
         }
+        
+        return false
     }
     
     override func didReceiveMemoryWarning() {
