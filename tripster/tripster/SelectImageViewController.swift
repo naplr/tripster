@@ -46,10 +46,7 @@ class SelectImageViewController: UIViewController {
         self.backgroundKy.image = UIImage(named: "page5")
         //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "page5")!)
         // Do any additional setup after loading the view.
-    
-
     }
-    
     
     override func viewDidLayoutSubviews() {
         updateBackgroundImage()
@@ -63,11 +60,70 @@ class SelectImageViewController: UIViewController {
     @IBAction func yesButtonClicked(sender: AnyObject) {
         self.selectedImages += [self.images[self.currentImageIndex]]
         self.totalSelectedLabels.text = "Total Selected \(self.selectedImages.count)"
+        
+        uploadImage(self.images[self.currentImageIndex])
+        
         nextImage()
     }
     
     @IBAction func noButtonClicked(sender: AnyObject) {
         nextImage()
+    }
+    
+    // Your method to upload image with parameters to server.
+    let url = "http://127.0.0.1:8000/api/v1/add-post/"
+    func uploadImage(image: ImageWithDetail){
+        var imageData = UIImageJPEGRepresentation(image.image, 1.0)
+        
+        if imageData != nil{
+            var request = NSMutableURLRequest(URL: NSURL(string: url)!)
+            var session = NSURLSession.sharedSession()
+            
+            request.HTTPMethod = "POST"
+            
+            var boundary = NSString(format: "---------------------------14737809831466499882746641449")
+            var contentType = NSString(format: "multipart/form-data; boundary=%@",boundary)
+            //  println("Content Type \(contentType)")
+            request.addValue(contentType as String, forHTTPHeaderField: "Content-Type")
+            
+            var body = NSMutableData()
+            
+            // username
+            body.appendData(NSString(format: "\r\n--%@\r\n",boundary).dataUsingEncoding(NSUTF8StringEncoding)!)
+            body.appendData(NSString(format:"Content-Disposition: form-data; name=\"username\"\r\n\r\n").dataUsingEncoding(NSUTF8StringEncoding)!)
+            body.appendData("tadpolr".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!)
+            
+            // latitude
+            body.appendData(NSString(format: "\r\n--%@\r\n",boundary).dataUsingEncoding(NSUTF8StringEncoding)!)
+            body.appendData(NSString(format:"Content-Disposition: form-data; name=\"latitude\"\r\n\r\n").dataUsingEncoding(NSUTF8StringEncoding)!)
+            body.appendData("\(image.location!.coordinate.latitude)".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!)
+            
+            // longitude
+            body.appendData(NSString(format: "\r\n--%@\r\n",boundary).dataUsingEncoding(NSUTF8StringEncoding)!)
+            body.appendData(NSString(format:"Content-Disposition: form-data; name=\"longitude\"\r\n\r\n").dataUsingEncoding(NSUTF8StringEncoding)!)
+            body.appendData("\(image.location!.coordinate.longitude)".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!)
+            
+            // creation date
+            body.appendData(NSString(format: "\r\n--%@\r\n",boundary).dataUsingEncoding(NSUTF8StringEncoding)!)
+            body.appendData(NSString(format:"Content-Disposition: form-data; name=\"creationDate\"\r\n\r\n").dataUsingEncoding(NSUTF8StringEncoding)!)
+            body.appendData("\(image.creationDate!)".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!)
+            
+            // Image
+            body.appendData(NSString(format: "\r\n--%@\r\n", boundary).dataUsingEncoding(NSUTF8StringEncoding)!)
+            body.appendData(NSString(format:"Content-Disposition: form-data; name=\"profile_img\"; filename=\"img.jpg\"\\r\n").dataUsingEncoding(NSUTF8StringEncoding)!)
+            body.appendData(NSString(format: "Content-Type: application/octet-stream\r\n\r\n").dataUsingEncoding(NSUTF8StringEncoding)!)
+            body.appendData(imageData!)
+            body.appendData(NSString(format: "\r\n--%@\r\n", boundary).dataUsingEncoding(NSUTF8StringEncoding)!)
+            
+            
+            request.HTTPBody = body
+            
+            var returnData = try! NSURLConnection.sendSynchronousRequest(request, returningResponse: nil)
+            
+            var returnString = NSString(data: returnData, encoding: NSUTF8StringEncoding)
+            print("returnString \(returnString)")
+            
+        }
     }
     
     func nextImage() {

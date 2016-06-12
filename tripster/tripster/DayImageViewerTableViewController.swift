@@ -35,6 +35,9 @@ class DayImageViewerTableViewController: UITableViewController {
         var result = [Int:[ImageWithDetail]]()
         for image in images {
             let creationDate = MyDate(date: image.creationDate!).getValue()
+            print(creationDate)
+            print(image.location?.coordinate.latitude)
+            print(image.location?.coordinate.longitude)
             
             if var group = result[creationDate] {
                 group += [image]
