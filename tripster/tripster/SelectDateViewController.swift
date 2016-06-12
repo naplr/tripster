@@ -29,8 +29,44 @@ class SelectDateViewController: UIViewController {
         doneButton.hidden = true
         
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "page3")!)
+        
+        checkLocation(130.75, longitude: 100.59)
         // Do any additional setup after loading the view.
     }
+    
+    // Your method to upload image with parameters to server.
+    let url = "http://127.0.0.1:8000/api/v1/check-location/"
+    func checkLocation(latitude:Float, longitude: Float){
+        var request = NSMutableURLRequest(URL: NSURL(string: url)!)
+        var session = NSURLSession.sharedSession()
+        
+        request.HTTPMethod = "POST"
+        
+        var boundary = NSString(format: "---------------------------14737809831466499882746641449")
+        var contentType = NSString(format: "multipart/form-data; boundary=%@",boundary)
+        //  println("Content Type \(contentType)")
+        request.addValue(contentType as String, forHTTPHeaderField: "Content-Type")
+        
+        var body = NSMutableData()
+        
+        // latitude
+        body.appendData(NSString(format: "\r\n--%@\r\n",boundary).dataUsingEncoding(NSUTF8StringEncoding)!)
+        body.appendData(NSString(format:"Content-Disposition: form-data; name=\"latitude\"\r\n\r\n").dataUsingEncoding(NSUTF8StringEncoding)!)
+        body.appendData("\(latitude)".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!)
+        
+        // longitude
+        body.appendData(NSString(format: "\r\n--%@\r\n",boundary).dataUsingEncoding(NSUTF8StringEncoding)!)
+        body.appendData(NSString(format:"Content-Disposition: form-data; name=\"longitude\"\r\n\r\n").dataUsingEncoding(NSUTF8StringEncoding)!)
+        body.appendData("\(longitude)".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!)
+        
+        request.HTTPBody = body
+        
+        var returnData = try! NSURLConnection.sendSynchronousRequest(request, returningResponse: nil)
+        
+        var returnString = NSString(data: returnData, encoding: NSUTF8StringEncoding)
+        print("returnString \(returnString)")
+    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

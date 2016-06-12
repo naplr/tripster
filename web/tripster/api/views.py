@@ -45,6 +45,26 @@ def add_post(request):
     return HttpResponse('add post')
 
 
+@csrf_exempt
+def check_location(request):
+    if request.method == 'POST':
+        print(request.POST)
+
+        latitude = request.POST['latitude']
+        longitude = request.POST['longitude']
+
+        for p in Post.objects.all():
+            if _check_distance(latitude, longitude, p.latitude, p.longitude):
+                return JsonResponse({'found': 'TRUE', 'image_url': p.image.url, 'username': p.username})
+
+        return JsonResponse({'found': 'FALSE'})
+
+
+def _check_distance(xla, xlo, yla, ylo):
+    if abs(yla-float(xla)) < 1 and abs(ylo-float(xlo)) < 1:
+        return True
+
+
 def get_post(request):
     return HttpResponse('get post')
 
