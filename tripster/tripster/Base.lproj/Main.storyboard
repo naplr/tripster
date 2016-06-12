@@ -161,16 +161,27 @@
                                     <segue destination="sJo-oe-Ldv" kind="show" id="8qU-t6-gse"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="caf-mR-uhd">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="190" y="341" width="30" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="4Gi-Y5-0Bz" kind="show" id="1r3-P7-yAb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="cIJ-dk-UYR"/>
+                                <exclude reference="caf-mR-uhd"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="cIJ-dk-UYR"/>
+                                <include reference="caf-mR-uhd"/>
                             </mask>
                         </variation>
                     </view>
@@ -234,15 +245,6 @@
                                     <action selector="startDateClicked:" destination="sJo-oe-Ldv" eventType="touchUpInside" id="rLT-Vt-YCo"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDZ-rg-v9b">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="194" y="183" width="42" height="21"/>
-                                </variation>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hh1-tl-RCe">
                                 <rect key="frame" x="269" y="200" width="63" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -271,16 +273,6 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="cDZ-rg-v9b"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular-widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="cDZ-rg-v9b"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="datePicker" destination="uAo-mW-2Ac" id="HBJ-Qa-mE1"/>
@@ -498,6 +490,117 @@
             </objects>
             <point key="canvasLocation" x="2530.5" y="807.75"/>
         </scene>
+        <!--Current Page View Controller-->
+        <scene sceneID="pgf-yT-jaV">
+            <objects>
+                <viewController id="4Gi-Y5-0Bz" customClass="CurrentPageViewController" customModule="tripster" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ucj-0J-5r3"/>
+                        <viewControllerLayoutGuide type="bottom" id="Htm-uZ-q1D"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Odk-55-ga2">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nAa-9I-S6Z">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="28" y="25" width="30" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="s85-ZB-h9F" kind="show" id="xdr-5p-aor"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="nAa-9I-S6Z"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="nAa-9I-S6Z"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dwr-zr-YaS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-633" y="1541.25"/>
+        </scene>
+        <!--Notification View Controller-->
+        <scene sceneID="ioC-eL-qgr">
+            <objects>
+                <viewController id="G3V-0r-27o" customClass="NotificationViewController" customModule="tripster" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IG7-RG-fc9"/>
+                        <viewControllerLayoutGuide type="bottom" id="ybz-D6-HMF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lr4-k0-Gyg">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1wW-DI-tAQ">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="46" y="80" width="312" height="434"/>
+                                </variation>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="1wW-DI-tAQ"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="1wW-DI-tAQ"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5kq-Hw-sWy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="232.5" y="1541.25"/>
+        </scene>
+        <!--Infographic View Controller-->
+        <scene sceneID="cuQ-sB-9S9">
+            <objects>
+                <viewController id="v3Z-Tx-7O1" customClass="InfographicViewController" customModule="tripster" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LPF-3S-wWb"/>
+                        <viewControllerLayoutGuide type="bottom" id="oCf-du-mM6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QrO-s5-2ud">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uia-LI-sEt">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="28" y="20" width="30" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="MRu-EM-pFP" kind="show" id="w11-lS-3Dv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="uia-LI-sEt"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="uia-LI-sEt"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KA5-nl-adC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1662" y="1605.75"/>
+        </scene>
         <!--Day Image Viewer Table View Controller-->
         <scene sceneID="9ja-pi-fCt">
             <objects>
@@ -679,16 +782,28 @@
                                     <rect key="frame" x="-49" y="28" width="499" height="746"/>
                                 </variation>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8n7-GW-XR1" userLabel="BACK">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="13" y="7" width="34" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="MRu-EM-pFP" kind="show" id="bFb-Mm-kb3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="olT-c3-wp1"/>
+                                <exclude reference="8n7-GW-XR1"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="olT-c3-wp1"/>
+                                <include reference="8n7-GW-XR1"/>
                             </mask>
                         </variation>
                     </view>
@@ -699,7 +814,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D6T-pK-mhq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4306.5" y="1914.75"/>
+            <point key="canvasLocation" x="4284" y="1509.75"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="UtJ-mZ-i4Q">
@@ -741,23 +856,45 @@
                                     <segue destination="91O-8Y-cLC" kind="show" id="VaV-eW-gAU"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="prC-Kj-YWh">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="22" y="11" width="30" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="s85-ZB-h9F" kind="show" id="fzD-BF-O0F"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5cx-u8-swt">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="361" y="22" width="30" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="v3Z-Tx-7O1" kind="show" id="iJL-Bo-qlg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="49f-jv-Zt0"/>
+                                <exclude reference="prC-Kj-YWh"/>
+                                <exclude reference="5cx-u8-swt"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="49f-jv-Zt0"/>
+                                <include reference="prC-Kj-YWh"/>
+                                <include reference="5cx-u8-swt"/>
                             </mask>
                         </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hga-8I-13Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1611" y="807.75"/>
+            <point key="canvasLocation" x="1695" y="826.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bD5-Oa-4vv">
@@ -782,6 +919,8 @@
         <image name="nrimages" width="2367" height="1578"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="fzD-BF-O0F"/>
+        <segue reference="w11-lS-3Dv"/>
         <segue reference="Cbe-eY-f5H"/>
     </inferredMetricsTieBreakers>
 </document>

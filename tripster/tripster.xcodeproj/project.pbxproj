@@ -29,6 +29,9 @@
 		3EEDC2421D0BDF5A00C3D2A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EEDC2401D0BDF5A00C3D2A5 /* LaunchScreen.storyboard */; };
 		6EFB71971D0C95E9003E3DAF /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFB71961D0C95E9003E3DAF /* LandingPageViewController.swift */; };
 		6EFB71991D0C95FE003E3DAF /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFB71981D0C95FE003E3DAF /* MainMenuViewController.swift */; };
+		6EFB719B1D0D0884003E3DAF /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFB719A1D0D0884003E3DAF /* NotificationViewController.swift */; };
+		6EFB719D1D0D08D3003E3DAF /* CurrentPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFB719C1D0D08D3003E3DAF /* CurrentPageViewController.swift */; };
+		6EFB719F1D0D11EB003E3DAF /* InfographicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFB719E1D0D11EB003E3DAF /* InfographicViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +59,9 @@
 		3EEDC2431D0BDF5A00C3D2A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6EFB71961D0C95E9003E3DAF /* LandingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingPageViewController.swift; sourceTree = "<group>"; };
 		6EFB71981D0C95FE003E3DAF /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		6EFB719A1D0D0884003E3DAF /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		6EFB719C1D0D08D3003E3DAF /* CurrentPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentPageViewController.swift; sourceTree = "<group>"; };
+		6EFB719E1D0D11EB003E3DAF /* InfographicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfographicViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +98,9 @@
 				3EEDC2371D0BDF5A00C3D2A5 /* AppDelegate.swift */,
 				3EEDC2391D0BDF5A00C3D2A5 /* ViewController.swift */,
 				3EEDC23B1D0BDF5A00C3D2A5 /* Main.storyboard */,
+				6EFB719E1D0D11EB003E3DAF /* InfographicViewController.swift */,
+				6EFB719C1D0D08D3003E3DAF /* CurrentPageViewController.swift */,
+				6EFB719A1D0D0884003E3DAF /* NotificationViewController.swift */,
 				3ED224221D0CCA5B00535005 /* SingleDayImageTableViewController.swift */,
 				3ED224241D0CCCA200535005 /* SingleDayImageTableViewCell.swift */,
 				3ED2241E1D0CB81500535005 /* DayImageViewerTableViewController.swift */,
@@ -147,6 +156,7 @@
 				TargetAttributes = {
 					3EEDC2331D0BDF5A00C3D2A5 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 4YVMDGN7Q6;
 					};
 				};
 			};
@@ -193,9 +203,11 @@
 				3ED224251D0CCCA200535005 /* SingleDayImageTableViewCell.swift in Sources */,
 				3E2542B01D0C116E00E33876 /* MealTableViewTableViewController.swift in Sources */,
 				3ED224271D0CD11B00535005 /* TabImageViewerViewController.swift in Sources */,
+				6EFB719F1D0D11EB003E3DAF /* InfographicViewController.swift in Sources */,
 				3ED2241B1D0C9DC100535005 /* MyDate.swift in Sources */,
 				3ED224211D0CB8B700535005 /* DayImageViewerTableViewCell.swift in Sources */,
 				3ED224131D0C384100535005 /* SelectImageViewController.swift in Sources */,
+				6EFB719B1D0D0884003E3DAF /* NotificationViewController.swift in Sources */,
 				6EFB71971D0C95E9003E3DAF /* LandingPageViewController.swift in Sources */,
 				3ED224231D0CCA5B00535005 /* SingleDayImageTableViewController.swift in Sources */,
 				3EEDC23A1D0BDF5A00C3D2A5 /* ViewController.swift in Sources */,
@@ -203,6 +215,7 @@
 				3ED224191D0C97D600535005 /* ImageWithDetail.swift in Sources */,
 				3E2542AA1D0BFF4400E33876 /* RatingControl.swift in Sources */,
 				3ED2241D1D0CAC8400535005 /* InterimViewController.swift in Sources */,
+				6EFB719D1D0D08D3003E3DAF /* CurrentPageViewController.swift in Sources */,
 				3ED224151D0C638300535005 /* ImageViewerViewController.swift in Sources */,
 				3EEDC2381D0BDF5A00C3D2A5 /* AppDelegate.swift in Sources */,
 			);
@@ -315,10 +328,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = tripster/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = napol.de.tripster;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -326,10 +342,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = tripster/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = napol.de.tripster;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
