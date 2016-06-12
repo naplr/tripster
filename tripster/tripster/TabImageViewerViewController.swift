@@ -17,9 +17,9 @@ class TabImageViewerViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        let heightPerItem = 400
-        let itemWidth = CGFloat(400)
-        let gapBetweenItem = 30
+        let heightPerItem = 800
+        let itemWidth = CGFloat(500)
+        let gapBetweenItem = 45
         
         let imageCount = self.todaySelectedImages.count
         
@@ -28,7 +28,7 @@ class TabImageViewerViewController: UIViewController {
         
         for (index, image) in todaySelectedImages.enumerate() {
             let imageView = UIImageView(frame: CGRectMake(
-                0,
+                2,
                 CGFloat(index*(heightPerItem+gapBetweenItem)),
                 itemWidth,
                 CGFloat(heightPerItem)))
