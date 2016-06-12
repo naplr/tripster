@@ -10,19 +10,98 @@ import UIKit
 
 class MainMenuViewController: UIViewController {
 
+    @IBOutlet weak var popup: UIView!
+    @IBOutlet weak var popupButton: UIButton!
+    @IBOutlet weak var popupLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.popup.hidden = true
+        self.popupButton.hidden = true
+        self.popupLabel.hidden = true
+        
         // Do any additional setup after loading the view.
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "page2")!)
         // Do any additional setup after loading the view.
     }
-
+    
+    func checkLocationAndPopup() {
+        let resultString = checkLocation(13.75, longitude: 100.59)
+        let data = resultString!.dataUsingEncoding(NSUTF8StringEncoding)
+        print(resultString)
+        
+        checkResult(data!)
+    }
+    
+    func completionCallBack() {
+        
+    }
+    
+    static let host_url = "http://127.0.0.1:8000"
+    func checkResult(resultData:NSData) {
+        let json = try! NSJSONSerialization.JSONObjectWithData(resultData, options: .AllowFragments)
+        
+        if let found = json["found"] as! String? {
+            if found == "TRUE" {
+                let username = json["username"] as! String
+                let image_url_path = json["image_url"] as! String
+                
+                let image_url = MainMenuViewController.host_url + image_url_path
+                
+                print("YES")
+                print("\(username)")
+                print("\(image_url)")
+                
+                self.popupLabel.text = "Your Friend \(username) Has Discovered A Place Around Here Before!"
+                
+                self.popup.hidden = false
+                self.popupButton.hidden = false
+                self.popupLabel.hidden = false
+            }
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    
+    // Your method to upload image with parameters to server.
+    let url = host_url + "/api/v1/check-location/"
+    func checkLocation(latitude:Float, longitude: Float) -> NSString?{
+        var request = NSMutableURLRequest(URL: NSURL(string: url)!)
+        var session = NSURLSession.sharedSession()
+        
+        request.HTTPMethod = "POST"
+        
+        var boundary = NSString(format: "---------------------------14737809831466499882746641449")
+        var contentType = NSString(format: "multipart/form-data; boundary=%@",boundary)
+        //  println("Content Type \(contentType)")
+        request.addValue(contentType as String, forHTTPHeaderField: "Content-Type")
+        
+        var body = NSMutableData()
+        
+        // latitude
+        body.appendData(NSString(format: "\r\n--%@\r\n",boundary).dataUsingEncoding(NSUTF8StringEncoding)!)
+        body.appendData(NSString(format:"Content-Disposition: form-data; name=\"latitude\"\r\n\r\n").dataUsingEncoding(NSUTF8StringEncoding)!)
+        body.appendData("\(latitude)".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!)
+        
+        // longitude
+        body.appendData(NSString(format: "\r\n--%@\r\n",boundary).dataUsingEncoding(NSUTF8StringEncoding)!)
+        body.appendData(NSString(format:"Content-Disposition: form-data; name=\"longitude\"\r\n\r\n").dataUsingEncoding(NSUTF8StringEncoding)!)
+        body.appendData("\(longitude)".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!)
+        
+        request.HTTPBody = body
+        
+        var returnData = try! NSURLConnection.sendSynchronousRequest(request, returningResponse: nil)
+        
+        var returnString = NSString(data: returnData, encoding: NSUTF8StringEncoding)
+        print("returnString \(returnString)")
+        
+        return returnString
+    }
 
     /*
     // MARK: - Navigation
